@@ -79,18 +79,18 @@
 ````mermaid
 classDiagram
     class Main {
-        -scanner: Scanner
-        -petMachine: PetMachine
-        +main(String[] args)
+        -scanner: Scanner$
+        -petMachine: PetMachine$
+        +main(String[] args)$ void
     }
 
     class Pet {
         -name: String
         -clean: boolean
         +Pet(String name)
-        +getName(): String
-        +isClean(): boolean
-        +setClean(boolean clean)
+        +getName() String
+        +isClean() boolean
+        +setClean(boolean clean) void
     }
 
     class PetMachine {
@@ -98,19 +98,19 @@ classDiagram
         -water: int
         -shampoo: int
         -pet: Pet
-        +takeAShower()
-        +addWater()
-        +addShampoo()
-        +getWater(): int
-        +getShampoo(): int
-        +hasPet(): boolean
-        +setPet(Pet pet)
-        +removePet()
-        +wash()
+        +takeAShower() void
+        +addWater() void
+        +addShampoo() void
+        +getWater() int
+        +getShampoo() int
+        +hasPet() boolean
+        +setPet(Pet pet) void
+        +removePet() void
+        +wash() void
     }
 
-    Main --> PetMachine
-    PetMachine --> Pet : Contém
+    Main --> PetMachine : Uses
+    PetMachine "1" --> "0..1" Pet : Contains
 ````
 
 * 🔄 Fluxograma Básico
